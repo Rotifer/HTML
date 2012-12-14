@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+  <!--
+  http://localhost/DNA_Translator.html
+  -->
+  <title>Test DNA Translation In Web Page</title>
+  <script src="TranslateDna.js"></script>
+  <script language="JavaScript" type="text/javascript">
+    function getAminoAcidTranslation () {
+        var input_dna_sequence = document.getElementById("input_dna_sequence").value,
+            trans = new TranslateDna(input_dna_sequence),
+            output_aminoacid_translation = trans.getAminoAcids().join(",");
+        document.getElementById("output_aminoacid_translation").value = output_aminoacid_translation; 
+    }
+  </script>
+</head>
+<html>
+<body>
+
+  <em>Enter Sequence To Be Translated Here:</em>
+  <form name="dna_translate">
+    <textarea rows="10" cols="60" name="input" id="input_dna_sequence">
+    </textarea>
+    <br>
+    <em>DNA Translation</em>
+    <br>
+    <textarea rows="10" cols="60" name="output" id="output_aminoacid_translation">
+    </textarea>
+    <br>
+    <input type="button" value="Translate" onclick="getAminoAcidTranslation()">
+  </form>
+</body>
+</html>
